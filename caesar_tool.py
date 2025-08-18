@@ -53,7 +53,7 @@ elif choice == 'd':
         return sum(word in candidate_lower for word in words)
 
     # Frequency check
-    def letter_frequency(text):
+    def frequency(text):
         text = text.upper()
         counts = Counter(ch for ch in text if ch.isalpha())
         total = sum(counts.values())
@@ -61,13 +61,13 @@ elif choice == 'd':
 
     def score_frequency(candidate):
         freq_table = en_freq if lang == "en" else it_freq
-        candidate_freq = letter_frequency(candidate)
+        candidate_freq = frequency(candidate)
         score = 0
         for ch in freq_table:
             score += (candidate_freq.get(ch, 0) - freq_table[ch]) ** 2
         return score  # lower = closer
 
-    def evaluate_candidate(candidate):
+    def evaluation(candidate):
         freq_w=0.5  # weight of frequency check
         dict_w=0.5  # weight of dictionary check
         dict_hits = score_dictionary(candidate)
@@ -96,17 +96,7 @@ elif choice == 'd':
 
         maintext = c.translate(trans)
 
-        score = evaluate_candidate(maintext)
+        score = evaluation(maintext)
         print(f"{i}  : {maintext} - {score:.3f}")
 
     decrypt(prep(ciphertext))
-
-
-
-
-
-
-
-
-
-
