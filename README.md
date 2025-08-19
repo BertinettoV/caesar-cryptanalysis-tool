@@ -16,7 +16,7 @@ Output: "LORYHSLCCD"
 
 ## Example for decrypting
 Input: "LORYHSLCCD"
-Output: "3  : ILOVEPIZZA - 534.610"
+Output: "Shift 3  : ILOVEPIZZA - 534.610"
 
 ## What next
 Vigenère and polyalphabetic ciphers.
