@@ -97,6 +97,6 @@ elif choice == 'd':
         maintext = c.translate(trans)
 
         score = evaluation(maintext)
-        print(f"{i}  : {maintext} - {score:.3f}")
+        print(f"Shift {i}  : {maintext} - {score:.3f}")
 
     decrypt(prep(ciphertext))
